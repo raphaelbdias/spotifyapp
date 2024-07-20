@@ -11,7 +11,8 @@ client_secret = os.getenv("CLIENT_SECRET")
 
 
 token = sc.get_token()
-result = sc.search_for_artist(token, "ACDC")
+artist_name = input('Which artist do you want to search? \nName:')
+result = sc.search_for_artist(token, artist_name=artist_name)
 artist_id = (result["id"])
 songs = sc.get_song_by_artist(token, artist_id)
 
